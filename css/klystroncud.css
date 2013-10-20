@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+}
+
+table.klystable div.unit {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+table.klystable td {
+  padding: 8px;
+  /*line-height: 1.5;*/
+  white-space: nowrap;
+  vertical-align: top;
+  text-align: center;
+}
+
+.text-deactivated {
+  color: #444444;
+  transition-property: color;
+  transition-duration: 3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.text-activated {
+  -webkit-transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+  color: #468847;
+}
+
+.text-faulted {
+  -webkit-transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+  color: #b94a48;
+}

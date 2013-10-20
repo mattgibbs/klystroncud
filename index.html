@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Klystron Status</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/klystroncud.css" rel="stylesheet">
+	<script src="js/d3.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1>LCLS Klystron Status</h1>
+		</div>
+		<div class="row">
+			<div class="table-responsive">
+				<table class="klystable">
+					<tr data-station="sbst"><!-- Subboosters -->
+						<td id="sb20" data-sector="LI20" class="klystron"><div class="unit text-activated">SB 20</div><div class="status"></div></td>
+						<td id="sb21" data-sector="LI21" class="klystron"><div class="unit text-danger">SB 21</div><div class="status text-danger">Modulator Fault</div></td>
+						<td id="sb22" data-sector="LI22" class="klystron"><div class="unit text-warning">SB 22</div><div class="status text-warning">Phase Jitter</div></td>
+						<td id="sb23" data-sector="LI23" class="klystron"><div class="unit text-info">SB 23</div><div class="status text-info">Check Phase</div></td>
+						<td id="sb24" data-sector="LI24" class="klystron"><div class="unit text-deactivated">SB 24</div></td>
+						<td id="sb25" data-sector="LI25" class="klystron"><div class="unit">SB 25</div></td>
+						<td id="sb26" data-sector="LI26" class="klystron"><div class="unit">SB 26</div></td>
+						<td id="sb27" data-sector="LI27" class="klystron"><div class="unit">SB 27</div></td>
+						<td id="sb28" data-sector="LI28" class="klystron"><div class="unit">SB 28</div></td>
+						<td id="sb29" data-sector="LI29" class="klystron"><div class="unit">SB 29</div></td>
+						<td id="sb30" data-sector="LI30" class="klystron"><div class="unit">SB 30</div></td>
+					</tr>
+					<!-- End Subboosters -->
+					<tr data-station="11"><!-- Station 1s -->
+						<td id="klys20-1"></td>
+						<td id="klys21-1" data-sector="LI21" class="klystron"><div class="unit">21-1</div></td>
+						<td id="klys22-1" data-sector="LI22" class="klystron"><div class="unit">22-1</div></td>
+						<td id="klys23-1" data-sector="LI23" class="klystron"><div class="unit">23-1</div></td>
+						<td id="klys24-1" data-sector="LI24" class="klystron"><div class="unit">24-1</div></td>
+						<td id="klys25-1" data-sector="LI25" class="klystron"><div class="unit">25-1</div></td>
+						<td id="klys26-1" data-sector="LI26" class="klystron"><div class="unit">26-1</div></td>
+						<td id="klys27-1" data-sector="LI27" class="klystron"><div class="unit">27-1</div></td>
+						<td id="klys28-1" data-sector="LI28" class="klystron"><div class="unit">28-1</div></td>
+						<td id="klys29-1" data-sector="LI29" class="klystron"><div class="unit">29-1</div></td>
+						<td id="klys30-1" data-sector="LI30" class="klystron"><div class="unit">30-1</div></td>
+					</tr>
+					<tr data-station="21"><!-- Station 2s -->
+						<td id="klys20-2"></td>
+						<td id="klys21-2" data-sector="LI21" class="klystron"><div class="unit">21-2</div></td>
+						<td id="klys22-2" data-sector="LI22" class="klystron"><div class="unit">22-2</div></td>
+						<td id="klys23-2" data-sector="LI23" class="klystron"><div class="unit">23-2</div></td>
+						<td id="klys24-2" data-sector="LI24" class="klystron"><div class="unit">24-2</div></td>
+						<td id="klys25-2" data-sector="LI25" class="klystron"><div class="unit">25-2</div></td>
+						<td id="klys26-2" data-sector="LI26" class="klystron"><div class="unit">26-2</div></td>
+						<td id="klys27-2" data-sector="LI27" class="klystron"><div class="unit">27-2</div></td>
+						<td id="klys28-2" data-sector="LI28" class="klystron"><div class="unit">28-2</div></td>
+						<td id="klys29-2" data-sector="LI29" class="klystron"><div class="unit">29-2</div></td>
+						<td id="klys30-2" data-sector="LI30" class="klystron"><div class="unit">30-2</div></td>
+					</tr>
+					<tr data-station="31"><!-- Station 3s -->
+						<td id="klys20-3"></td>
+						<td id="klys21-3" data-sector="LI21" class="klystron"><div class="unit">21-3</div></td>
+						<td id="klys22-3" data-sector="LI22" class="klystron"><div class="unit">22-3</div></td>
+						<td id="klys23-3" data-sector="LI23" class="klystron"><div class="unit">23-3</div></td>
+						<td id="klys24-3" data-sector="LI24" class="klystron"><div class="unit">24-3</div></td>
+						<td id="klys25-3" data-sector="LI25" class="klystron"><div class="unit">25-3</div></td>
+						<td id="klys26-3" data-sector="LI26" class="klystron"><div class="unit">26-3</div></td>
+						<td id="klys27-3" data-sector="LI27" class="klystron"><div class="unit">27-3</div></td>
+						<td id="klys28-3" data-sector="LI28" class="klystron"><div class="unit">28-3</div></td>
+						<td id="klys29-3" data-sector="LI29" class="klystron"><div class="unit">29-3</div></td>
+						<td id="klys30-3" data-sector="LI30" class="klystron"><div class="unit">30-3</div></td>
+					</tr>
+					<tr data-station="41"><!-- Station 4s -->
+						<td id="klys20-4"></td>
+						<td id="klys21-4" data-sector="LI21" class="klystron"><div class="unit">21-4</div></td>
+						<td id="klys22-4" data-sector="LI22" class="klystron"><div class="unit">22-4</div></td>
+						<td id="klys23-4" data-sector="LI23" class="klystron"><div class="unit">23-4</div></td>
+						<td id="klys24-4" data-sector="LI24" class="klystron"><div class="unit">24-4</div></td>
+						<td id="klys25-4" data-sector="LI25" class="klystron"><div class="unit">25-4</div></td>
+						<td id="klys26-4" data-sector="LI26" class="klystron"><div class="unit">26-4</div></td>
+						<td id="klys27-4" data-sector="LI27" class="klystron"><div class="unit">27-4</div></td>
+						<td id="klys28-4" data-sector="LI28" class="klystron"><div class="unit">28-4</div></td>
+						<td id="klys29-4" data-sector="LI29" class="klystron"><div class="unit">29-4</div></td>
+						<td id="klys30-4" data-sector="LI30" class="klystron"><div class="unit">30-4</div></td>
+					</tr>
+					<tr data-station="51"><!-- Station 5s -->
+						<td id="klys20-5" data-sector="LI20" class="klystron"><div class="unit">20-5</div></td>
+						<td id="klys21-5" data-sector="LI21" class="klystron"><div class="unit">21-5</div></td>
+						<td id="klys22-5" data-sector="LI22" class="klystron"><div class="unit">22-5</div></td>
+						<td id="klys23-5" data-sector="LI23" class="klystron"><div class="unit">23-5</div></td>
+						<td id="klys24-5" data-sector="LI24" class="klystron"><div class="unit">24-5</div></td>
+						<td id="klys25-5" data-sector="LI25" class="klystron"><div class="unit">25-5</div></td>
+						<td id="klys26-5" data-sector="LI26" class="klystron"><div class="unit">26-5</div></td>
+						<td id="klys27-5" data-sector="LI27" class="klystron"><div class="unit">27-5</div></td>
+						<td id="klys28-5" data-sector="LI28" class="klystron"><div class="unit">28-5</div></td>
+						<td id="klys29-5" data-sector="LI29" class="klystron"><div class="unit">29-5</div></td>
+						<td id="klys30-5" data-sector="LI30" class="klystron"><div class="unit">30-5</div></td>
+					</tr>
+					<tr data-station="61"><!-- Station 6s -->
+						<td id="klys20-6" data-sector="LI20" class="klystron"><div class="unit">20-6</div></td>
+						<td id="klys21-6" data-sector="LI21" class="klystron"><div class="unit">21-6</div></td>
+						<td id="klys22-6" data-sector="LI22" class="klystron"><div class="unit">22-6</div></td>
+						<td id="klys23-6" data-sector="LI23" class="klystron"><div class="unit">23-6</div></td>
+						<td id="klys24-6" data-sector="LI24" class="klystron"><div class="unit">24-6</div></td>
+						<td id="klys25-6" data-sector="LI25" class="klystron"><div class="unit">25-6</div></td>
+						<td id="klys26-6" data-sector="LI26" class="klystron"><div class="unit">26-6</div></td>
+						<td id="klys27-6" data-sector="LI27" class="klystron"><div class="unit">27-6</div></td>
+						<td id="klys28-6" data-sector="LI28" class="klystron"><div class="unit">28-6</div></td>
+						<td id="klys29-6" data-sector="LI29" class="klystron"><div class="unit">29-6</div></td>
+						<td id="klys30-6" data-sector="LI30" class="klystron"><div class="unit">30-6</div></td>
+					</tr>
+					<tr data-station="71"><!-- Station 7s -->
+						<td id="klys20-7" data-sector="LI20" class="klystron"><div class="unit">20-7</div></td>
+						<td id="klys21-7" data-sector="LI21" class="klystron"><div class="unit">21-7</div></td>
+						<td id="klys22-7" data-sector="LI22" class="klystron"><div class="unit">22-7</div></td>
+						<td id="klys23-7" data-sector="LI23" class="klystron"><div class="unit">23-7</div></td>
+						<td id="klys24-7" data-sector="LI24"></td>
+						<td id="klys25-7" data-sector="LI25" class="klystron"><div class="unit">25-7</div></td>
+						<td id="klys26-7" data-sector="LI26" class="klystron"><div class="unit">26-7</div></td>
+						<td id="klys27-7" data-sector="LI27" class="klystron"><div class="unit">27-7</div></td>
+						<td id="klys28-7" data-sector="LI28" class="klystron"><div class="unit">28-7</div></td>
+						<td id="klys29-7" data-sector="LI29" class="klystron"><div class="unit">29-7</div></td>
+						<td id="klys30-7" data-sector="LI30" class="klystron"><div class="unit">30-7</div></td>
+					</tr>
+					<tr data-station="81"><!-- Station 8s -->
+						<td id="klys20-8" data-sector="LI20" class="klystron"><div class="unit">20-8</div></td>
+						<td id="klys21-8" data-sector="LI21" class="klystron"><div class="unit">21-8</div></td>
+						<td id="klys22-8" data-sector="LI22" class="klystron"><div class="unit">22-8</div></td>
+						<td id="klys23-8" data-sector="LI23" class="klystron"><div class="unit">23-8</div></td>
+						<td id="klys24-8" data-sector="LI24" class="klystron"><div class="unit">24-8</div></td>
+						<td id="klys25-8" data-sector="LI25" class="klystron"><div class="unit">25-8</div></td>
+						<td id="klys26-8" data-sector="LI26" class="klystron"><div class="unit">26-8</div></td>
+						<td id="klys27-8" data-sector="LI27" class="klystron"><div class="unit">27-8</div></td>
+						<td id="klys28-8" data-sector="LI28" class="klystron"><div class="unit">28-8</div></td>
+						<td id="klys29-8" data-sector="LI29" class="klystron"><div class="unit">29-8</div></td>
+						<td id="klys30-8" data-sector="LI30" class="klystron"><div class="unit">30-8</div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/klystroncud.js"></script>
+</html>
