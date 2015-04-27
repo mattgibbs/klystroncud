@@ -38,3 +38,11 @@ table.klystable td {
   -webkit-transition-delay: 0s;
   color: #b94a48;
 }
+
+.text-offline {
+  -webkit-transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -webkit-transition-delay: 0s;
+  color: #3a87ad;
+}
