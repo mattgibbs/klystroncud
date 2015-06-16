@@ -6,8 +6,8 @@ class Klystron:
 		self.sector = sector
 		self.station = station
 		self.faults = []
-		self.faults_callback = faults_callback
-		self.triggers_callback = triggers_callback
+		self.faults_callback = None
+		self.triggers_callback = None
 		self.swrdMonitor = epics.PV(self.swrdPV())
 		self.statMonitor = epics.PV(self.statPV())
 		self.hdscMonitor = epics.PV(self.hdscPV())
@@ -24,6 +24,8 @@ class Klystron:
 		self.accelerateTriggersMonitor = epics.PV(self.beamcodeStatPV(self.typicalBeamcode()))
 		self.acc_trigger_status = self.accelerateTriggersMonitor.get()
 		self.accelerateTriggersMonitor.add_callback(self.triggersChanged)
+		self.faults_callback = faults_callback
+		self.triggers_callback = triggers_callback
 	
 	def basePV(self):
 		return "KLYS:LI{0}:{1}1".format(self.sector, self.station)
