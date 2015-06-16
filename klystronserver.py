@@ -21,9 +21,16 @@ class KlystronServerApplication(WebSocketApplication):
 	def __init__(self, ws):
 		super(KlystronServerApplication, self).__init__(ws)
 		self.klystrons = {}
-		for sector in range(21,31):
+		sectors = {}
+		sectors[20] = [5,6,7,8];
+		for s in range(21,31):
+			sectors[s] = range(0,9)
+		sectors[24] = [0,1,2,3,4,5,6,8]
+		
+		
+		for sector in sectors:
 			klystrons_in_sector = {}
-			for station in range(1,9):
+			for station in sectors[sector]:
 				if (sector == 24 and station == 7):
 					continue
 				klystrons_in_sector[station] = Klystron(sector,station,faults_callback=self.klystron_fault_callback, triggers_callback=self.klystron_triggers_callback)
