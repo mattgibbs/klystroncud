@@ -67,14 +67,14 @@ class KlystronServerApplication(WebSocketApplication):
 #    return static_file(filename, root='./static')
 
 #wsgi_app is the callable to use for WSGI servers.
-wsgi_app = Resource({'^/klystrons$': KlystronServerApplication})
+wsgi_klystron_app = Resource({'^/klystrons$': KlystronServerApplication})
 
 #start() starts the development server.
 def start():
 	logger.info("Starting klystronserver.")
 	host = "127.0.0.1"
 	port = 8889
-	server = WebSocketServer((host, port), wsgi_app)
+	server = WebSocketServer((host, port), wsgi_klystron_app)
 	server.serve_forever()
 
 if __name__ == '__main__':
