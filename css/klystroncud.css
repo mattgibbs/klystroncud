@@ -40,7 +40,7 @@ div.status {
   transition-duration: 0.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
-  color: #468847;
+  color: #5AD925;
 }
 
 .text-warn {
@@ -51,12 +51,27 @@ div.status {
   color: #FFFF3B;
 }
 
+@keyframes faultpulse {
+  from {
+    color: #B92421;
+  }
+
+  to {
+    color: #ED2E2B;
+  }
+}
+
 .text-faulted {
   transition-property: color;
   transition-duration: 0.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
-  color: #b94a48;
+  color: #B92421;
+	animation-duration: 1s;
+	animation-name: faultpulse;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
 }
 
 .text-offline {
