@@ -28,6 +28,8 @@ class Klystron:
 		self.triggers_callback = triggers_callback
 	
 	def basePV(self):
+		if self.station == 0:
+			return "SBST:LI{0}:1".format(self.sector)
 		return "KLYS:LI{0}:{1}1".format(self.sector, self.station)
 	
 	def beamcodeStatPV(self, beamcode):
