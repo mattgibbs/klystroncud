@@ -2,13 +2,15 @@ body {
   background-color: #001923;
 }
 
-div.title {
+div.title h1 {
+	font-size: 45px;
+	font-weight: bold;
 	color: white;
 }
 
 table.klystable div.unit {
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 table.klystable td {
@@ -20,8 +22,9 @@ table.klystable td {
 }
 
 div.status {
-	height: 16px;
-	min-width: 110px;
+	font-size: 22px;
+	height: 22px;
+	min-width: 135px;
 }
 
 .text-deactivated {

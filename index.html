@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Klystron Status</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/klystroncud.css" rel="stylesheet">
 	<script src="js/d3.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="row title">
-			<h1>LCLS Klystron Status</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 title">
+				<h1>LCLS Klystron Status</h1>
+			</div>
 		</div>
 		<div class="row">
-			<div class="table-responsive">
-				<table class="klystable">
+			<div>
+				<table class="klystable" style="margin: 0 auto;">
 					<tr data-station="SBST"><!-- Subboosters -->
 						<td id="klys20-0" data-sector="LI20" class="klystron"><div class="unit">SB 20</div><div class="status"></div></td>
 						<td id="klys21-0" data-sector="LI21" class="klystron"><div class="unit">SB 21</div><div class="status"></div></td>
