@@ -1,5 +1,9 @@
 body {
-  background-color: black;
+  background-color: #001923;
+}
+
+div.title {
+	color: white;
 }
 
 table.klystable div.unit {
