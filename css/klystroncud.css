@@ -19,6 +19,11 @@ table.klystable td {
   text-align: center;
 }
 
+div.status {
+	height: 16px;
+	min-width: 110px;
+}
+
 .text-deactivated {
   color: #444444;
   transition-property: color;
@@ -57,4 +62,12 @@ table.klystable td {
   transition-timing-function: ease;
   transition-delay: 0s;
   color: #3a87ad;
+}
+
+.no-fault {
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  opacity: 0.0;
 }
