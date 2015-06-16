@@ -24,25 +24,33 @@ table.klystable td {
 }
 
 .text-activated {
-  -webkit-transition-property: color;
-  -webkit-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
-  -webkit-transition-delay: 0s;
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
   color: #468847;
 }
 
+.text-warn {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  color: #FFFF3B;
+}
+
 .text-faulted {
-  -webkit-transition-property: color;
-  -webkit-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
-  -webkit-transition-delay: 0s;
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
   color: #b94a48;
 }
 
 .text-offline {
-  -webkit-transition-property: color;
-  -webkit-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
-  -webkit-transition-delay: 0s;
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
   color: #3a87ad;
 }
