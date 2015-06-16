@@ -87,13 +87,15 @@ function startConnection() {
     }).classed("text-activated", function(d, i) {
       return d['trigger_status'] === 1;
     }).classed("text-deactivated", function(d, i) {
-      return d['trigger_status'] === 2;
+      return d['trigger_status'] > 1 ;
+    }).classed("text-good", function(d, i) {
+      return d['faults'] === undefined || d['faults'].length === 0;
     }).classed("text-offline", function(d, i) {
       return d['trigger_status'] === 3 || d['trigger_status'] === 4;
     }).classed("text-warn", function(d, i) {
-      return (fault_class_map[d['faults'][0]] === "text-warn") && (d['trigger_status'] === 1);
+      return (fault_class_map[d['faults'][0]] === "text-warn");
     }).classed("text-faulted", function(d, i) {
-      return (fault_class_map[d['faults'][0]] === "text-faulted") && (d['trigger_status'] === 1);
+      return (fault_class_map[d['faults'][0]] === "text-faulted");
     }).select("div.status").classed("no-fault", function(d, i) {
       return (d['faults'] == undefined || d['faults'].length == 0);
     }).text(function(d) {

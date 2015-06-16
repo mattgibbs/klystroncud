@@ -8,6 +8,12 @@ div.title h1 {
 	color: white;
 }
 
+div.comment {
+	font-size: 22px;
+	color: white;
+	opacity: 0.3;
+}
+
 table.klystable div.unit {
   font-size: 40px;
   font-weight: bold;
@@ -28,19 +34,51 @@ div.status {
 }
 
 .text-deactivated {
-  color: #444444;
-  transition-property: color;
+  opacity: 0.3;
+  transition-property: opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.text-deactivated.text-faulted {
+  opacity: .60;
+  transition-property: opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.text-deactivated.text-warn {
+  opacity: .40;
+  transition-property: opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.text-deactivated.text-offline {
+  opacity: .35;
+  transition-property: opacity;
   transition-duration: 3s;
   transition-timing-function: ease;
   transition-delay: 0s;
 }
 
 .text-activated {
+	opacity: 1.0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.text-good {
   transition-property: color;
   transition-duration: 0.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
-  color: #5AD925;
+	color: #5AD925;
 }
 
 .text-warn {
@@ -53,11 +91,11 @@ div.status {
 
 @keyframes faultpulse {
   from {
-    color: #B92421;
+    color: #E00000;
   }
 
   to {
-    color: #ED2E2B;
+    color: #FF0000;
   }
 }
 
@@ -66,7 +104,7 @@ div.status {
   transition-duration: 0.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
-  color: #B92421;
+  color: #E00000;
 	animation-duration: 1s;
 	animation-name: faultpulse;
 	animation-iteration-count: infinite;
