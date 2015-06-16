@@ -1,5 +1,63 @@
 var trigger_scale = d3.scale.ordinal().domain([1, 2, 3, 4]).range(["#40DE30", "#A3A3A3", "#91A7FF", "#91A7FF"]);
 
+var fault_class_map = {
+  "Bad Cable Status": "text-faulted",
+   "MKSU Protect": "text-faulted",
+   "No Triggers": "text-faulted",
+   "Modulator Fault": "text-faulted",
+   "Low RF Power": "text-warn",
+   "Amplitude Mean": "text-warn",
+   "Amplitude Jitter": "text-warn",
+   "Lost Phase": "text-warn",
+   "Phase Jitter": "text-warn",
+   "No Sample Rate": "text-warn",
+   "Maintenance Mode": "text-offline",
+   "Offline": "text-offline",
+   "Out of Tolerance": "text-warn",
+   "Bad CAMAC Status": "text-warn",
+   "Dead Man Timeout": "text-faulted",
+   "Fox Phase Home Error": "text-faulted",
+   "Phase Mean": "text-warn",
+   "IPL Required": "text-faulted",
+   "Update Required": "text-faulted",
+   "To Be Replaced": "text-offline",
+   "Awaiting Run Up": "text-offline",
+   "Check Phase": "text-offline",
+   "SLED Motor Not At Limit": "text-faulted", 
+   "SLED Upper Needle Fault": "text-faulted",
+   "SLED Lower Needle Fault": "text-faulted",
+   "Electromagnet Current Out of Tolerance": "text-faulted",
+   "Klystron Temperature": "text-faulted",
+   "Reflected Energy": "text-faulted",
+   "Over Voltage": "text-faulted",
+   "Over Current": "text-faulted",
+   "PPYY Resync": "text-faulted",
+   "ADC Read Error": "text-faulted",
+   "ADC Out of Tolerance": "text-faulted",
+   "Water Summary Fault": "text-faulted",
+   "Acc Flowswitch #1": "text-faulted",
+   "Acc Flowswitch #2": "text-faulted",
+   "Waveguide Flowswitch #1": "text-faulted",
+   "Waveguide Flowswitch #2": "text-faulted",
+   "Klystron Water Flowswitch": "text-faulted",
+   "24 Volt Battery": "text-faulted",
+   "Waveguide Vacuum": "text-faulted",
+   "Klystron Vacuum": "text-faulted",
+   "Electromagnet Current": "text-faulted",
+   "Electromagnet Breaker": "text-faulted",
+   "MKSU Trigger Enable": "text-faulted",
+   "EVOC": "text-faulted",
+   "End of Line Clipper": "text-faulted",
+   "Mod Trigger Overcurrent": "text-faulted",
+   "External Fault": "text-faulted",
+   "Fault Lockout": "text-faulted",
+   "HV Ready": "text-faulted",
+   "Klystron Heater Delay": "text-faulted",
+   "VVS Voltage": "text-faulted",
+   "Control Power": "text-faulted"
+}
+
+
 function startConnection() {
   supportsWebSockets = 'WebSocket' in window || 'MozWebSocket' in window;
   var socket;
@@ -32,20 +90,18 @@ function startConnection() {
       return d['trigger_status'] === 2;
     }).classed("text-offline", function(d, i) {
       return d['trigger_status'] === 3 || d['trigger_status'] === 4;
-    }).select("div.status").text(function(d) {
+    }).classed("text-warn", function(d, i) {
+      return (fault_class_map[d['faults'][0]] === "text-warn") && (d['trigger_status'] === 1);
+    }).classed("text-faulted", function(d, i) {
+      return (fault_class_map[d['faults'][0]] === "text-faulted") && (d['trigger_status'] === 1);
+    }).select("div.status").classed("no-fault", function(d, i) {
+      return (d['faults'] == undefined || d['faults'].length == 0);
+    }).text(function(d) {
       if (d['faults'] !== undefined && d['faults'].length > 0) {
         return d['faults'][0];
       }
-      return "";
     });
-    /*
-    d3.select(klysSelector + " div.status").text(function(d) {
-      if (d['faults'] !== undefined && d['faults'].length > 0) {
-        return d['faults'][0];
-      }
-      return "";
-    });
-    */
+    
   };
 }
 
