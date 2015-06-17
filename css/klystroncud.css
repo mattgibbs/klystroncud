@@ -48,7 +48,7 @@ div.status {
 }
 
 .text-deactivated.text-faulted {
-  opacity: .60;
+  opacity: .50;
   transition-property: opacity;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -57,6 +57,8 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+	animation-name: none;
+	-webkit-animation-name: none;
 }
 
 .text-deactivated.text-warn {
@@ -120,22 +122,22 @@ div.status {
 }
 
 @keyframes faultpulse {
-  from {
-    color: #E00000;
+  0% {
+    color: #FF0000;
   }
 
-  to {
-    color: #FF0000;
+  100% {
+    color: #CC0000;
   }
 }
 
 @-webkit-keyframes faultpulse {
-  from {
-    color: #E00000;
+  0% {
+    color: #FF0000;
   }
 
-  to {
-    color: #FF0000;
+  100% {
+    color: #CC0000;
   }
 }
 
@@ -148,7 +150,7 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
-  color: #E00000;
+  color: #FF0000;
 	animation-duration: 1s;
 	animation-name: faultpulse;
 	animation-iteration-count: infinite;
