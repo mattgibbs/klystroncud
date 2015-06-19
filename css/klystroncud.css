@@ -232,6 +232,10 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
   transition-property: opacity;
   transition-duration: 0.5s;
   transition-timing-function: ease;
