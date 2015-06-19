@@ -45,6 +45,10 @@ div.status {
   -webkit-transition-duration: 3s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 3s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
 }
 
 .text-deactivated.text-faulted {
@@ -57,8 +61,13 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
 	animation-name: none;
 	-webkit-animation-name: none;
+	-moz-animation-name: none;
 }
 
 .text-deactivated.text-warn {
@@ -71,6 +80,10 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
 }
 
 .text-deactivated.text-offline {
@@ -83,6 +96,10 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
 }
 
 .text-activated {
@@ -95,6 +112,10 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
 }
 
 .text-good {
@@ -106,6 +127,10 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: color;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
 	color: #0fbc04;
 }
 
@@ -118,6 +143,10 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: color;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
   color: #FFD105;
 }
 
@@ -141,6 +170,16 @@ div.status {
   }
 }
 
+@-moz-keyframes faultpulse {
+  0% {
+    color: #FF0000;
+  }
+
+  100% {
+    color: #CC0000;
+  }
+}
+
 .text-faulted {
   transition-property: color;
   transition-duration: 0.5s;
@@ -150,6 +189,10 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: color;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
   color: #FF0000;
 	animation-duration: 1s;
 	animation-name: faultpulse;
@@ -161,6 +204,11 @@ div.status {
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-direction: alternate;
 	-webkit-animation-timing-function: ease-in-out;
+	-moz-animation-duration: 1s;
+	-moz-animation-name: faultpulse;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+	-moz-animation-timing-function: ease-in-out;
 }
 
 .text-offline {
@@ -172,6 +220,10 @@ div.status {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
+  -moz-transition-property: color;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -moz-transition-delay: 0s;
   color: #3a87ad;
 }
 
