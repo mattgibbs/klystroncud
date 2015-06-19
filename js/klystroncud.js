@@ -69,7 +69,7 @@ function startSocket() {
   supportsWebSockets = 'WebSocket' in window || 'MozWebSocket' in window;
   if (socket === undefined || socket.readyState === undefined || socket.readyState > 1) {
     if ('WebSocket' in window) {
-      socket = new WebSocket('ws://lcls-prod03/klystrons');
+      socket = new WebSocket('ws://lcls-prod03.slac.stanford.edu/klystrons');
     } else if ('MozWebSocket' in window) {
       socket = new MozWebSocket('ws://lcls-prod03/klystrons');
     }
