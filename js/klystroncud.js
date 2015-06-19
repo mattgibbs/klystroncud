@@ -82,11 +82,13 @@ startSocket();
 
 socket.onopen = function() {
   console.log("Connection opened.");
+  d3.select('#errormsg').text(null).classed("errorpulse", false);
 };
 
 socket.onclose = function() {
   //Wait a few seconds, then try to re-establish the websocket connection.
   console.log("Connection closed.  Attempting to reconnect in ten seconds...");
+  d3.select('#errormsg').text("Lost connection to server.  Reconnecting...").classed("errorpulse", true);
   retryTimer = window.setTimeout(reloadPage, 10000);
 };
 
