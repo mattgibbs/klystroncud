@@ -13,6 +13,9 @@ class Klystron:
 		self.hdscMonitor = epics.PV(self.hdscPV())
 		self.dstaMonitor = epics.PV(self.dstaPV())
 		self.swrd = self.swrdMonitor.get()
+		#Horrible hack to ignore the bit for 'low RF power' on LCLS front-end klystrons.
+		if (self.sector == 20 and self.station == 7) or (self.sector == 21 and self.station == 1) or (self.sector == 21 and self.station == 2):
+			self.swrd = int(self.swrd) & ~(1 << 5)
 		self.stat = self.statMonitor.get()
 		self.hdsc = self.hdscMonitor.get()
 		self.dsta = self.dstaMonitor.get()
@@ -59,7 +62,11 @@ class Klystron:
 	
 	def swrdCallback(self, pvname=None, value=None, **kw):
 		if value != self.swrd:
-			self.swrd = value
+			#Horrible hack to ignore the bit for 'low RF power' on LCLS front-end klystrons.
+			if (self.sector == 20 and self.station == 7) or (self.sector == 21 and self.station == 1) or (self.sector == 21 and self.station == 2):
+				self.swrd = int(value) & ~(1 << 5)
+			else:
+				self.swrd = value
 			self.recalcFaults()
 		
 	def statCallback(self, pvname=None, value=None, **kw):
