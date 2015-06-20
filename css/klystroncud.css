@@ -38,21 +38,21 @@ div.status {
 .text-deactivated {
   opacity: 0.3;
   transition-property: opacity;
-  transition-duration: 3s;
+  transition-duration: 1s;
   transition-timing-function: ease;
   transition-delay: 0s;
   -webkit-transition-property: opacity;
-  -webkit-transition-duration: 3s;
+  -webkit-transition-duration: 1s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
   -moz-transition-property: opacity;
-  -moz-transition-duration: 3s;
+  -moz-transition-duration: 1s;
   -moz-transition-timing-function: ease;
   -moz-transition-delay: 0s;
 }
 
 .text-deactivated.text-faulted {
-  opacity: .50;
+  opacity: .35;
   transition-property: opacity;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -68,22 +68,6 @@ div.status {
 	animation-name: none;
 	-webkit-animation-name: none;
 	-moz-animation-name: none;
-}
-
-.text-deactivated.text-warn {
-  opacity: .40;
-  transition-property: opacity;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-  -webkit-transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
-  -webkit-transition-delay: 0s;
-  -moz-transition-property: opacity;
-  -moz-transition-duration: 0.5s;
-  -moz-transition-timing-function: ease;
-  -moz-transition-delay: 0s;
 }
 
 .text-deactivated.text-offline {
@@ -120,15 +104,15 @@ div.status {
 
 .text-good {
   transition-property: color;
-  transition-duration: 0.5s;
+  transition-duration: 1.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
   -webkit-transition-property: color;
-  -webkit-transition-duration: 0.5s;
+  -webkit-transition-duration: 1.5s;
   -webkit-transition-timing-function: ease;
   -webkit-transition-delay: 0s;
   -moz-transition-property: color;
-  -moz-transition-duration: 0.5s;
+  -moz-transition-duration: 1.5s;
   -moz-transition-timing-function: ease;
   -moz-transition-delay: 0s;
 	color: #0fbc04;
