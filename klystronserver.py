@@ -36,8 +36,6 @@ class KlystronServerApplication(WebSocketApplication):
 		for sector in sectors:
 			klystrons_in_sector = {}
 			for station in sectors[sector]:
-				if (sector == 24 and station == 7):
-					continue
 				klystrons_in_sector[station] = Klystron(sector,station,faults_callback=self.klystron_fault_callback, triggers_callback=self.klystron_triggers_callback)
 			klystrons[sector] = klystrons_in_sector
 		logger.debug("Finished connecting to klystrons.")
