@@ -1,5 +1,5 @@
 body {
-  background-color: #001923;
+  background-color: #000000;
 }
 
 div.title h1 {
@@ -14,25 +14,60 @@ div.comment {
 	opacity: 0.3;
 }
 
-table.klystable div.unit {
-  font-size: 40px;
+.unit {
+  font-size: 32px;
   font-weight: bold;
+	width: 50%;
+	margin: 0 auto;
 }
 
+table.klystable td.text-activated .unit:after {
+  content: "";
+	display: block;
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	background: rgb(30,30,30);
+	border-radius: 50%;
+}
+
+table.klystable td.text-deactivated .unit:after {
+  content: "";
+	display: block;
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	background: #4679BD;
+	opacity: 0.0;
+	border-radius: 50%;
+}
+
+.unit div {
+  float: left;
+	width: 100%;
+	padding-top: 50%;
+	line-height: 1em;
+	margin-top: -0.5em;
+	text-align: center;
+}
+
+
 table.klystable td {
-  /*padding: 0px 8px 8px 8px;*/
-  /*line-height: 1.5;*/
-  /*white-space: nowrap;*/
   vertical-align: top;
   text-align: center;
 }
 
+table.klystable td[data-sector='LI24'] {
+	padding-right: 6em;
+}
+
 div.status {
-	font-size: 22px;
+	font-size: 24px;
 	line-height: 1.0;
-	height: 44px;
-	width: 155px;
+	height: 48px;
+	width: 165px;
 	text-overflow: ellipsis;
+	margin-top: -1.0em;
 }
 
 .text-deactivated {
@@ -103,7 +138,7 @@ div.status {
 }
 
 .text-good {
-  transition-property: color;
+  transition-property: color, font-size;
   transition-duration: 1.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
@@ -119,7 +154,7 @@ div.status {
 }
 
 .text-warn {
-  transition-property: color;
+  transition-property: color, font-size;
   transition-duration: 0.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
@@ -165,7 +200,7 @@ div.status {
 }
 
 .text-faulted {
-  transition-property: color;
+  transition-property: color, font-size;
   transition-duration: 0.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
@@ -196,7 +231,7 @@ div.status {
 }
 
 .text-offline {
-  transition-property: color;
+  transition-property: color, font-size;
   transition-duration: 0.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
